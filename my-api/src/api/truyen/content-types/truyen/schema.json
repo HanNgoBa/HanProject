@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "truyens",
+  "info": {
+    "singularName": "truyen",
+    "pluralName": "truyens",
+    "displayName": "Truyen",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tenTruyen": {
+      "type": "text"
+    },
+    "tacGia": {
+      "type": "text"
+    },
+    "gioiThieu": {
+      "type": "text"
+    },
+    "anhBia": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "chapHienCo": {
+      "type": "biginteger"
+    },
+    "the_loai": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::the-loai.the-loai",
+      "inversedBy": "truyens"
+    },
+    "chap_truyens": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chap-truyen.chap-truyen",
+      "mappedBy": "truyen"
+    },
+    "theo_dois": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::theo-doi.theo-doi",
+      "mappedBy": "truyens"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "theo_dois",
+  "info": {
+    "singularName": "theo-doi",
+    "pluralName": "theo-dois",
+    "displayName": "TheoDoi",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IdTruyen": {
+      "type": "biginteger"
+    },
+    "IdUser": {
+      "type": "biginteger"
+    },
+    "truyens": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::truyen.truyen",
+      "inversedBy": "theo_dois"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "theo_dois"
+    }
+  }
+}

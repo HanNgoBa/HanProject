@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chap_truyens",
+  "info": {
+    "singularName": "chap-truyen",
+    "pluralName": "chap-truyens",
+    "displayName": "ChapTruyen",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IdChap": {
+      "type": "biginteger"
+    },
+    "IdTruyen": {
+      "type": "biginteger"
+    },
+    "tap": {
+      "type": "biginteger"
+    },
+    "tenTap": {
+      "type": "text"
+    },
+    "anh_truyens": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::anh-truyen.anh-truyen",
+      "mappedBy": "chap_truyen"
+    },
+    "truyen": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::truyen.truyen",
+      "inversedBy": "chap_truyens"
+    },
+    "binh_luans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::binh-luan.binh-luan",
+      "mappedBy": "chap_truyens"
+    }
+  }
+}

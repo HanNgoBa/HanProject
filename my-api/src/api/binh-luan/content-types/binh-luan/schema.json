@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "binh_luans",
+  "info": {
+    "singularName": "binh-luan",
+    "pluralName": "binh-luans",
+    "displayName": "BinhLuan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "noiDung": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "binh_luans"
+    },
+    "chap_truyens": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chap-truyen.chap-truyen",
+      "inversedBy": "binh_luans"
+    }
+  }
+}

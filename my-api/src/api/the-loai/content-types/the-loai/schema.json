@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "the_loais",
+  "info": {
+    "singularName": "the-loai",
+    "pluralName": "the-loais",
+    "displayName": "TheLoai"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IdLoai": {
+      "type": "biginteger"
+    },
+    "tenLoai": {
+      "type": "text"
+    },
+    "truyens": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::truyen.truyen",
+      "mappedBy": "the_loai"
+    }
+  }
+}

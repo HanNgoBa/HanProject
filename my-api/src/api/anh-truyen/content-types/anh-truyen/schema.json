@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anh_truyens",
+  "info": {
+    "singularName": "anh-truyen",
+    "pluralName": "anh-truyens",
+    "displayName": "AnhTruyen",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "noiDungAnh": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "IdChap": {
+      "type": "biginteger"
+    },
+    "chap_truyen": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chap-truyen.chap-truyen",
+      "inversedBy": "anh_truyens"
+    }
+  }
+}
